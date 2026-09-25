@@ -51,7 +51,7 @@ K_MSGQ_DEFINE(sato_my_msgq_func, sizeof(DataPacket), 10, 4);
 void my_msgq_func(void *p1, void *p2, void *p3) {
     char *thread_name = (char *)p1; // 引数1をキャストして使用
     
-
+       
     while (true) {
         int ret = k_msgq_get(&sato_my_msgq_func, &received_packet, K_FOREVER);
         if (ret == 0) {
